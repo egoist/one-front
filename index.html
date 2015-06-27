@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ONE · 一个</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/build/css/main.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <div class="header container">
+      <h1 class="site-title">
+          <a href="#!home" onclick="removeActive();$('home-button').classList.add('active')">ONE</a>
+      </h1>
+      <div class="tabs">
+        <a class="tab" id="home-button" href="#!home" onclick="removeActive();this.classList.add('active')">中二语</a>
+        <a class="tab" id="things-button" href="#!things" onclick="removeActive();this.classList.add('active')">好东西</a>
+        <a class="tab" id="questions-button" href="#!questions" onclick="removeActive();this.classList.add('active')">好奇心</a>
+      </div>
+    </div>
+    <div id="output"></div>
+    
+    <script id="list-template" type="text/template">
+      <div class="container">
+      {% for one in ones %}
+      <div class="one">
+        <div class="cover" data-echo-background="{{one.hpEntity.strThumbnailUrl}}"></div>
+        <div class="one-meta">
+          <div class="one-author">{{one.hpEntity.strAuthor}}</div>
+          <div class="one-des">{{one.hpEntity.strContent}}</div>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </script>
+    <script id="things-template" type="text/template">
+      <div class="container">
+      {% for one in ones %}
+      <div class="one">
+        <div class="cover" data-echo-background="{{one.entTh.strBu}}"></div>
+        <div class="one-meta">
+          <div class="one-thing-name">{{one.entTh.strTt}}</div>
+          <div class="one-des">{{one.entTh.strTc}}</div>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </script>
+    <script id="questions-template" type="text/template">
+      <div class="container">
+      {% for one in ones %}
+      <div class="one">
+        <div class="one-q-title">{{one.questionAdEntity.strAnswerTitle}} {{one.questionAdEntity.strQuestionTitle}}</div>
+        <div class="one-q-content">{{one.questionAdEntity.strQuestionContent}}</div>
+        <div class="one-q-a">{{one.questionAdEntity.strAnswerContent|safe}}</div>
+      </div>
+      {% endfor %}
+      </div>
+    </script>
+    <script id="loading-template" type="text/template">
+      <div class="loading">
+        loading...
+      </div>
+    </script>
+    
+    <script src="/build/js/vendor.js"></script>
+  </body>
+</html>

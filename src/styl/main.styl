@@ -1,0 +1,98 @@
+@import 'mixins'
+@import 'media'
+
+body
+  margin 0
+  background-color #fafafa
+  font 16px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"
+
+h1,h2,h3,h4,h5,h6,ul,ol
+  margin 0
+
+.container
+  max-width 555px
+  margin 0 auto
+
+a
+  color #333
+  text-decoration none
+
+.header
+  margin 20px auto
+  text-align center
+
+.site-title
+  text-shadow 0 1px #fff
+  font-size 30px
+  display inline-block
+
+.loading
+  text-align center
+  color #999
+  text-shadow 0 1px #fff
+  padding 30px 0
+
+.one
+  margin-bottom 20px
+  border 1px solid #edeeee
+  border-radius 3px
+  position relative
+  background-color white
+  .one-meta
+    .one-author
+      background-color white
+      text-align center
+      padding 10px
+      font-size 13px
+      color #999
+    .one-des
+      padding 10px 0
+      margin 0 10px
+      border-top 1px solid #eee
+      line-height 1.7
+  .cover
+    border-radius 3px 3px 0 0
+    max-width 100%
+    height 530px
+    background-color #eee
+    background-size cover
+    position relative
+    .placeholder
+      position absolute
+      left 50%
+      top 50%
+      z-index -1
+
+.tabs
+  padding 20px 0
+  .tab
+    display inline-block
+    border-radius 33px
+    border 1px solid #e2e2e2
+    padding 5px 20px
+    &.active
+      border-color #333
+
+.one-q-title
+  font-weight bold
+
+.one-q-content
+  font-size 14px
+  color #999
+
+.one-q-title,.one-q-content
+  background-color #f9f9f9
+  padding 10px
+
+.one-q-a
+  line-height 1.7
+  padding 10px
+  p
+    margin 0 0 30px 0
+    &:last-child
+      margin-bottom 0
+
+.one-thing-name
+  padding 10px
+  font-size 20px
+  font-weight bold
